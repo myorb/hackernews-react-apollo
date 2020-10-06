@@ -1,4 +1,4 @@
-type Link {
+type Link @embedded {
   id: ID! @id
   createdAt: DateTime! @createdAt
   description: String!
@@ -7,7 +7,7 @@ type Link {
   votes: [Vote!]!
 }
 
-type User {
+type User @embedded {
   id: ID! @id
   name: String!
   email: String! @unique
@@ -16,7 +16,7 @@ type User {
   votes: [Vote!]!
 }
 
-type Vote {
+type Vote @embedded {
   id: ID! @id
   link: Link!
   user: User!
